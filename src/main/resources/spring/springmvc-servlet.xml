@@ -16,8 +16,9 @@
 	<mvc:annotation-driven />
 
 	<context:component-scan base-package="com.yuansong.controller" />
-	<!--
+	<context:component-scan base-package="com.yuansong.repository" />
 	<context:component-scan base-package="com.yuansong.service" />
+	<!--
 	<context:component-scan base-package="com.yuansong.VO" />
 	<context:component-scan base-package="com.yuansong.data.repository" />
 	<context:component-scan base-package="com.yuansong.filter" />
