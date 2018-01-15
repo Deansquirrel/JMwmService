@@ -9,6 +9,7 @@ public class XtEmpLogin {
 	private String userPwd;
 	private Date addTime;
 	private Date lastUpdate;
+	private int delete;
 	
 	public int getUserId() {
 		return userId;
@@ -43,5 +44,11 @@ public class XtEmpLogin {
 	}
 	public void setLastUpdate(Date lastUpdate) {
 		this.lastUpdate = lastUpdate;
+	}
+	public int getDelete() {
+		return delete;
+	}
+	public void setDelete(int delete) {
+		this.delete = delete;
 	}
 }

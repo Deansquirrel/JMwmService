@@ -3,6 +3,7 @@ package com.yuansong.controller;
 import java.util.Map;
 
 import org.apache.log4j.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
@@ -12,6 +13,9 @@ import org.springframework.web.servlet.ModelAndView;
 public class RootController {
 	
 	private final Logger logger = Logger.getLogger(RootController.class);
+	
+	@Autowired
+	com.yuansong.service.ISUser sUser;
 	
 	@RequestMapping(value="/")
 	public ModelAndView defaultPage(Map<String, Object> model){
@@ -25,7 +29,7 @@ public class RootController {
 		logger.info("RootController rootPage");
 		System.out.println("RootController rootPage");
 		model.put("info", "rootPage中文");
-
+		model.put("info", sUser.isUserVaild("yuansong", "yuansong"));
 		return new ModelAndView("testPage",model);
 	}
 	
@@ -33,8 +37,9 @@ public class RootController {
 	public ModelAndView testPageOne(Map<String, Object> model){
 		logger.info("RootController testPageOne");
 		System.out.println("RootController testPageOne");
+		sUser.addLogin(3, "tttt", "ttttttt");
 		model.put("info", "testPageOne");
-
+		sUser.updatePwd(1, "123");
 		return new ModelAndView("testPage",model);
 	}
 	
