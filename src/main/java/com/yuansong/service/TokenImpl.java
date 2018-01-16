@@ -11,7 +11,7 @@ import org.apache.commons.codec.binary.Base64;
 import org.springframework.stereotype.Service;
 
 @Service
-public class TokenImpl implements Token {
+public class TokenImpl implements IToken {
 	
 	private volatile static TokenImpl token = null;
 	
@@ -24,7 +24,7 @@ public class TokenImpl implements Token {
 	}
 	
 	@Override
-	public Token getInstance() {
+	public IToken getInstance() {
 		if(token == null) {
 			synchronized(TokenImpl.class) {
 				if(token == null) {

@@ -8,15 +8,13 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
 import com.yuansong.bean.XtEmpLogin;
-import com.yuansong.common.ObjConvert;
 import com.yuansong.repository.rowMapper.XtEmpLoginRowMapper;
 
 @Repository
-public class IRUserImpl implements IRUser {
+public class RXtEmpLoginImpl implements IRXtEmpLogin {
 	
-	private final Logger logger = Logger.getLogger(IRUserImpl.class);
-	
-	private ObjConvert objConvert = new ObjConvert();
+	@SuppressWarnings("unused")
+	private final Logger logger = Logger.getLogger(RXtEmpLoginImpl.class);
 	
 	private final String SQL_AddEmpLogin = ""
 			+ "INSERT INTO xtemplogin("
@@ -26,14 +24,14 @@ public class IRUserImpl implements IRUser {
 			+ "Faddtime,"
 			+ "Flastupdate,"
 			+ "Fdelete) "
-			+ "VALUES(?,?,?,?,?,0)";
+			+ "VALUES(?,?,?,GETDATE(),GETDATE(),0)";
 	
-	private final String SQL_UpdateEmpLogin = ""
+	private final String SQL_UpdateEmpLoginById = ""
 			+ "UPDATE xtemplogin "
 			+ "SET "
 			+ "FLoginName = ?" 
 			+ ",FUserPwd = ?" 
-			+ ",Flastupdate = ?"
+			+ ",Flastupdate = GETDATE()"
 			+ ",Fdelete = ? " 
 			+ "WHERE FUserId = ?";
 	
@@ -72,47 +70,19 @@ public class IRUserImpl implements IRUser {
 
 	@Override
 	public int addEmpLogin(XtEmpLogin xtEmpLogin) {
-		logger.debug("addEmpLogin");
-		logger.debug(xtEmpLogin.getUserId());
-		logger.debug(xtEmpLogin.getUserLoginName());
-		logger.debug(xtEmpLogin.getUserPwd());
-		logger.debug(xtEmpLogin.getAddTime());
-		logger.debug(xtEmpLogin.getLastUpdate());
-		logger.debug(xtEmpLogin.getDelete());
-		String dateStr = objConvert.getDateStr(new  java.util.Date());
 		return this.jdbcTemplate.update(SQL_AddEmpLogin, new Object[] {
 			xtEmpLogin.getUserId(),
 			xtEmpLogin.getUserLoginName(),
-			xtEmpLogin.getUserPwd(),
-			dateStr,
-			dateStr});
+			xtEmpLogin.getUserPwd()});
 	}
 
 	@Override
 	public int updateEmpLogin(XtEmpLogin xtEmpLogin) {
-		logger.debug("updateEmpLogin");
-		logger.debug(xtEmpLogin.getUserId());
-		logger.debug(xtEmpLogin.getUserLoginName());
-		logger.debug(xtEmpLogin.getUserPwd());
-		logger.debug(xtEmpLogin.getAddTime());
-		logger.debug(xtEmpLogin.getLastUpdate());
-		logger.debug(xtEmpLogin.getDelete());	
-		String dateStr = objConvert.getDateStr(new  java.util.Date());
-		return this.jdbcTemplate.update(SQL_UpdateEmpLogin, new Object[] {
+		return this.jdbcTemplate.update(SQL_UpdateEmpLoginById, new Object[] {
 			xtEmpLogin.getUserLoginName(),
 			xtEmpLogin.getUserPwd(),
-			dateStr,
 			xtEmpLogin.getDelete(),
 			xtEmpLogin.getUserId()});
-		
-//		private final String SQL_UpdateEmpLogin = ""
-//				+ "UPDATE xtemplogin "
-//				+ "SET "
-//				+ "FLoginName = ?" 
-//				+ ",FUserPwd = ?" 
-//				+ ",Flastupdate = ?"
-//				+ ",Fdelete = ? " 
-//				+ "WHERE FUserId = ?";
 	}
 
 	@Override

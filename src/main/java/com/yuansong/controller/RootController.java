@@ -39,7 +39,7 @@ public class RootController {
 		System.out.println("RootController testPageOne");
 		sUser.addLogin(3, "tttt", "ttttttt");
 		model.put("info", "testPageOne");
-		sUser.updatePwd(1, "123");
+		sUser.updatePwd(1, "yuansong");
 		return new ModelAndView("testPage",model);
 	}
 	

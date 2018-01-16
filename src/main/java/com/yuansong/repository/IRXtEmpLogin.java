@@ -4,7 +4,7 @@ import java.util.List;
 
 import com.yuansong.bean.XtEmpLogin;
 
-public interface IRUser {
+public interface IRXtEmpLogin {
 
 	/**
 	 * 增加用户登录信息

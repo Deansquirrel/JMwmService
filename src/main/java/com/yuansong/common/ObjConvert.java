@@ -9,7 +9,7 @@ public class ObjConvert {
 	 * @param date
 	 * @return
 	 */
-	public String getDateStr(java.util.Date date) {
+	public static String getDateStr(java.util.Date date) {
 		SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 		return sdf.format(date);
 	}
@@ -19,7 +19,7 @@ public class ObjConvert {
 	 * @param date
 	 * @return
 	 */
-	public java.util.Date convertSqlDateToUtilDate(java.sql.Date date){
+	public static java.util.Date convertSqlDateToUtilDate(java.sql.Date date){
 		return new java.util.Date(date.getTime());
 	}
 	
@@ -28,7 +28,7 @@ public class ObjConvert {
 	 * @param date
 	 * @return
 	 */
-	public java.sql.Date convertUtilDateToSqlDate(java.util.Date date){
+	public static java.sql.Date convertUtilDateToSqlDate(java.util.Date date){
 		return new java.sql.Date(date.getTime());
 	}
 }

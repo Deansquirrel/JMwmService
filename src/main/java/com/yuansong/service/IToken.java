@@ -1,12 +1,12 @@
 package com.yuansong.service;
 
-public interface Token {
+public interface IToken {
 	
 	/**
 	 * 返回唯一实例
 	 * @return
 	 */
-	public Token getInstance();
+	public IToken getInstance();
 
 	/**
 	 * 生成Token
