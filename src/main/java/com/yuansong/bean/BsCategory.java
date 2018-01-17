@@ -14,6 +14,7 @@ public class BsCategory {
 	private String remark;
 	private Date addTime;
 	private Date lastUpdate;
+	private int stop;
 	public int getId() {
 		return id;
 	}
@@ -49,5 +50,11 @@ public class BsCategory {
 	}
 	public void setLastUpdate(Date lastUpdate) {
 		this.lastUpdate = lastUpdate;
+	}
+	public int getStop() {
+		return stop;
+	}
+	public void setStop(int stop) {
+		this.stop = stop;
 	}
 }

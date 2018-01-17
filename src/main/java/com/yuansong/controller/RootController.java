@@ -15,7 +15,7 @@ public class RootController {
 	private final Logger logger = Logger.getLogger(RootController.class);
 	
 	@Autowired
-	com.yuansong.service.ISUser sUser;
+	com.yuansong.service.IUser sUser;
 	
 	@RequestMapping(value="/")
 	public ModelAndView defaultPage(Map<String, Object> model){

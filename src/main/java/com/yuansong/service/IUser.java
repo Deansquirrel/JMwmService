@@ -1,6 +1,6 @@
 package com.yuansong.service;
 
-public interface ISUser {
+public interface IUser {
 	
 	/**
 	 * 添加用户

@@ -8,7 +8,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.yuansong.service.ISUser;
+import com.yuansong.service.ICategory;
+import com.yuansong.service.IUser;
 
 @Controller
 @RequestMapping(value="/test")
@@ -18,7 +19,11 @@ public class TestController {
 	
 	@SuppressWarnings("unused")
 	@Autowired
-	private ISUser sUser;
+	private IUser su;
+	
+	@SuppressWarnings("unused")
+	@Autowired
+	private ICategory sc;
 	
 	@RequestMapping(value="")
 	public ModelAndView defaultPage(Map<String, Object> model){

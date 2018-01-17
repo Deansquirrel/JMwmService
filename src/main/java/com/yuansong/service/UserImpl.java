@@ -11,9 +11,9 @@ import com.yuansong.repository.IRXtEmpInfo;
 import com.yuansong.repository.IRXtEmpLogin;
 
 @Service
-public class SUserImpl implements ISUser {
+public class UserImpl implements IUser {
 	
-	private final Logger logger = Logger.getLogger(SUserImpl.class);
+	private final Logger logger = Logger.getLogger(UserImpl.class);
 	
 	@Autowired
 	private IRXtEmpLogin rEmpLogin;
@@ -25,7 +25,7 @@ public class SUserImpl implements ISUser {
 	public void addUser(String userName) {
 		XtEmpInfo obj = new XtEmpInfo();
 		obj.setUserName(userName);
-		synchronized(SUserImpl.class) {
+		synchronized(UserImpl.class) {
 			obj.setUserId(rEmpInfo.getNewUserId());
 			rEmpInfo.addEmpInfo(obj);
 		}
