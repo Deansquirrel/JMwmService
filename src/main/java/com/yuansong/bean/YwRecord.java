@@ -11,6 +11,7 @@ public class YwRecord {
 	private String remark;
 	private Date addTime;
 	private Date lastUpdate;
+	private int delete;
 	public long getId() {
 		return id;
 	}
@@ -52,5 +53,11 @@ public class YwRecord {
 	}
 	public void setLastUpdate(Date lastUpdate) {
 		this.lastUpdate = lastUpdate;
+	}
+	public int getDelete() {
+		return delete;
+	}
+	public void setDelete(int delete) {
+		this.delete = delete;
 	}
 }
