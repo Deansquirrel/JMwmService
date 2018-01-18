@@ -10,6 +10,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.yuansong.service.ICategory;
 import com.yuansong.service.IUser;
+import com.yuansong.service.IYwRecordId;
 
 @Controller
 @RequestMapping(value="/test")
@@ -24,6 +25,10 @@ public class TestController {
 	@SuppressWarnings("unused")
 	@Autowired
 	private ICategory sc;
+	
+	@SuppressWarnings("unused")
+	@Autowired
+	private IYwRecordId sYwRecordId;
 	
 	@RequestMapping(value="")
 	public ModelAndView defaultPage(Map<String, Object> model){
