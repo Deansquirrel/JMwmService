@@ -5,15 +5,15 @@ import org.springframework.stereotype.Service;
 import com.yuansong.common.IdWorker;
 
 @Service
-public class YwRecordIdImpl implements IYwRecordId {
+public class RecordIdImpl implements IRecordId {
 	
-	private YwRecordIdImpl(){};
+	private RecordIdImpl(){};
 	
-	private static final YwRecordIdImpl instance = new YwRecordIdImpl();
+	private static final RecordIdImpl instance = new RecordIdImpl();
 	
 	private final IdWorker idWorker = new IdWorker();
 	
-	public static YwRecordIdImpl getInstance(){
+	public static RecordIdImpl getInstance(){
         return instance;
 	}
 

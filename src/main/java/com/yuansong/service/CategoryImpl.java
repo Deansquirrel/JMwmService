@@ -75,21 +75,14 @@ public class CategoryImpl implements ICategory {
 			rc.updateCategoryById(c);
 		}
 	}
-
+	
 	@Override
-	public void updateCategoryName(int id, String newName) {
+	public void updateCategoryName(int id, String name, int type, String remark) {
 		BsCategory c = rc.getCategoryById(id);
 		if(c != null) {
-			c.setName(newName);
-			rc.updateCategoryById(c);
-		}
-	}
-
-	@Override
-	public void updateCategoryRemark(int id, String newRemark) {
-		BsCategory c = rc.getCategoryById(id);
-		if(c != null) {
-			c.setRemark(newRemark);
+			c.setName(name);
+			c.setType(type);
+			c.setRemark(remark);
 			rc.updateCategoryById(c);
 		}
 	}

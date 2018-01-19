@@ -27,18 +27,11 @@ public interface ICategory {
 	public void resumeCategory(int id);
 	
 	/**
-	 * 更新Category的Name
+	 * 更新Category
 	 * @param id
-	 * @param newName
+	 * @param new
 	 */
-	public void updateCategoryName(int id, String newName);
-	
-	/**
-	 * 更新Category的Remark
-	 * @param id
-	 * @param newRemark
-	 */
-	public void updateCategoryRemark(int id, String newRemark);
+	public void updateCategoryName(int id, String name,int type,String remark);
 	
 	/**
 	 * 返回全部Category

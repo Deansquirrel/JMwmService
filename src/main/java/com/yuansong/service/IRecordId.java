@@ -1,6 +1,6 @@
 package com.yuansong.service;
 
-public interface IYwRecordId {
+public interface IRecordId {
 	
 	public long getNextId();
 
