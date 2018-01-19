@@ -85,6 +85,21 @@ public class YwRecordImpl implements IYwRecord {
 			"	AND Fdate <= ?" + 
 			"	AND Fcategoryid = ?";
 	
+	private final String SQL_GetYwRecordByCategoryTypeId = "" + 
+			"SELECT a.Fid  " + 
+			"      ,a.Fdate  " + 
+			"      ,a.Fmoney  " + 
+			"      ,a.Fcategoryid  " + 
+			"      ,a.Fremark  " + 
+			"      ,a.Faddtime  " + 
+			"      ,a.Flastupdate  " + 
+			"      ,a.Fdelete" + 
+			"  FROM ywrecord a " + 
+			"	inner join bscategory b on a.Fcategoryid = b.Fid" + 
+			"  WHERE Fdate >= ?  " + 
+			"	AND Fdate <= ?  " + 
+			"	AND b.Ftype = ?";
+	
 	private final String SQL_GetYwRecordByRemark = "" +
 			"SELECT Fid" + 
 			"      ,Fdate" + 
@@ -135,6 +150,11 @@ public class YwRecordImpl implements IYwRecord {
 	@Override
 	public List<YwRecord> getYwRecordByCategoryId(Date startDate, Date endDate, int categoryId) {
 		return this.jdbcTemplate.query(SQL_GetYwRecordByCategoryId, new Object[] {startDate, endDate, categoryId}, new YwRecordRowMapper());
+	}
+	
+	@Override
+	public List<YwRecord> getYwRecordByCategoryTypeId(Date startDate, Date endDate, int categoryTypeId) {
+		return this.jdbcTemplate.query(SQL_GetYwRecordByCategoryTypeId, new Object[] {startDate, endDate, categoryTypeId}, new YwRecordRowMapper());
 	}
 
 	@Override

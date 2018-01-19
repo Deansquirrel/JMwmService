@@ -46,6 +46,15 @@ public interface IYwRecord {
 	public List<YwRecord> getYwRecordByCategoryId(Date startDate,Date endDate,int categoryId);
 	
 	/**
+	 * 根据CategoryTypeId获取YwRecord
+	 * @param startDate
+	 * @param endDate
+	 * @param categoryTypeId
+	 * @return
+	 */
+	public List<YwRecord> getYwRecordByCategoryTypeId(Date startDate,Date endDate,int categoryTypeId);
+	
+	/**
 	 * 根据备注模糊查询YwRecord
 	 * @param remark
 	 * @return
