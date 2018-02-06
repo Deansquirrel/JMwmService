@@ -82,9 +82,8 @@
 		<property name="suffix" value=".jsp" />
 	</bean>
  
- 	<!--  
+  
  	<bean id="exceptionResolver" class="com.yuansong.controller.ExceptionHandler" /> 
- 	-->
 	 
 	<bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping" />
 
