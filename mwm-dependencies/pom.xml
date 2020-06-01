@@ -1,0 +1,153 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>com.yuansong</groupId>
+    <artifactId>mwm-service</artifactId>
+    <version>${appversion}</version>
+  </parent>
+  <artifactId>mwm-dependencies</artifactId>
+  <packaging>pom</packaging>
+  <name>mwm-dependencies</name>
+  <description>mwm dependencies</description>
+  
+  <properties>
+    <main.basedir>${basedir}/..</main.basedir>
+    <io.springfox.swagger2>2.9.2</io.springfox.swagger2>
+    <io.springfox.swagger.ui>2.9.2</io.springfox.swagger.ui>
+    <org.mybatis.spring.boot.starter>2.1.1</org.mybatis.spring.boot.starter>
+    <com.alibaba.druid.starter>1.1.21</com.alibaba.druid.starter>
+    <com.microsoft.sqljdbc4>3.0</com.microsoft.sqljdbc4>
+    <mysql.connector.java>8.0.19</mysql.connector.java>
+    <org.xerial.sqlite.jdbc>3.28.0</org.xerial.sqlite.jdbc>
+    <com.google.code.gson>2.8.6</com.google.code.gson>
+    <com.squareup.okhttp3>3.14.6</com.squareup.okhttp3>
+    <yuansong.tools.jtools.common>0.0.9</yuansong.tools.jtools.common>
+    <yuansong.tools.jtools.secret>0.0.2</yuansong.tools.jtools.secret>
+  </properties>
+  
+  <repositories>
+    <repository>
+        <id>deansquirrel-maven-repo-release</id>
+        <url>https://gitee.com/deansquirrel/maven-jrepository/raw/master</url>
+    </repository>
+  </repositories>
+  
+  <dependencies>
+    <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-log4j2</artifactId>
+    </dependency>
+  </dependencies>
+  
+  <dependencyManagement>
+    <dependencies>
+        <!-- Springboot Begin -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter</artifactId>
+            <version>${springversion}</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-starter-logging</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+            <version>${springversion}</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-starter-logging</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <!-- Springboot End -->
+        <!-- Swagger2 Begin -->
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger2</artifactId>
+            <version>${io.springfox.swagger2}</version>
+        </dependency>
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger-ui</artifactId>
+            <version>${io.springfox.swagger.ui}</version>
+        </dependency>
+        <!-- Swagger2 End -->
+        <!-- 数据库 Begin -->
+        <!-- mybatis -->
+        <dependency>
+            <groupId>org.mybatis.spring.boot</groupId>
+            <artifactId>mybatis-spring-boot-starter</artifactId>
+            <version>${org.mybatis.spring.boot.starter}</version>
+        </dependency>
+        <!-- mybatis -->
+        <!-- alibaba -->
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>druid-spring-boot-starter</artifactId>
+            <version>${com.alibaba.druid.starter}</version>
+        </dependency>
+        <!-- alibaba -->
+        <!-- mssql -->
+        <dependency>
+            <groupId>com.microsoft</groupId>
+            <artifactId>sqljdbc4</artifactId>
+            <version>${com.microsoft.sqljdbc4}</version>
+        </dependency>
+        <!-- mssql -->
+        <!-- mysql -->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>${mysql.connector.java}</version>
+        </dependency>
+        <!-- mysql -->
+        <!-- sqlite -->
+        <dependency>
+            <groupId>org.xerial</groupId>
+            <artifactId>sqlite-jdbc</artifactId>
+            <version>${org.xerial.sqlite.jdbc}</version>
+        </dependency>
+        <!-- sqlite -->
+        <!-- 数据库 End -->
+        <!-- 其他第三方 Begin -->
+        <dependency>
+            <groupId>com.google.code.gson</groupId>
+            <artifactId>gson</artifactId>
+            <version>${com.google.code.gson}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.squareup.okhttp3</groupId>
+            <artifactId>okhttp</artifactId>
+            <version>${com.squareup.okhttp3}</version>
+        </dependency>
+        <!-- 其他第三方 End -->
+        <!-- 自定义 Begin -->
+        <dependency>
+            <groupId>com.yuansong.tools</groupId>
+            <artifactId>yuansong-jtools-common</artifactId>
+            <version>${yuansong.tools.jtools.common}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.yuansong.tools</groupId>
+            <artifactId>yuansong-jtools-secret</artifactId>
+            <version>${yuansong.tools.jtools.secret}</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>com.yuansong.tools</groupId>
+                    <artifactId>yuansong-jtools-common</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.slf4j</groupId>
+                    <artifactId>slf4j-api</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <!-- 自定义 End -->
+    </dependencies>
+  </dependencyManagement>
+</project>

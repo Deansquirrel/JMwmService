@@ -1,0 +1,13 @@
+{
+	"properties": [{
+		"name": "proj",
+		"type": "com.yuansong.mwm.module.config.yml.Do.ProjectConfigDo",
+		"description": "A description for 'proj'"
+	},
+	{
+		"name": "swagger",
+		"type": "com.yuansong.mwm.module.config.yml.Do.SwaggerConfigDo",
+		"description": "A description for 'swagger'"
+	}
+    ]
+}

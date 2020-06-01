@@ -1,0 +1,30 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>com.yuansong</groupId>
+    <artifactId>mwm-parent</artifactId>
+    <version>${appversion}</version>
+  </parent>
+  <artifactId>mwm-module-swagger</artifactId>
+  
+  <dependencies>
+    <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter</artifactId>
+    </dependency>
+    <dependency>
+        <groupId>io.springfox</groupId>
+        <artifactId>springfox-swagger2</artifactId>
+    </dependency>
+    <dependency>
+        <groupId>io.springfox</groupId>
+        <artifactId>springfox-swagger-ui</artifactId>
+    </dependency>
+    
+    <dependency>
+        <groupId>com.yuansong</groupId>
+        <artifactId>mwm-module-config</artifactId>
+        <version>${appversion}</version>
+    </dependency>
+  </dependencies>
+</project>

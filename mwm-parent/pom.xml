@@ -1,0 +1,24 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>com.yuansong</groupId>
+    <artifactId>mwm-dependencies</artifactId>
+    <version>${appversion}</version>
+    <relativePath>../mwm-dependencies</relativePath>
+  </parent>
+  <artifactId>mwm-parent</artifactId>
+  <packaging>pom</packaging>
+  <name>mwm-parent</name>
+  <description>mwm parent</description>
+  
+  <properties>
+    <main.basedir>${basedir}/..</main.basedir>
+    <projversion>${appversion}</projversion>
+  </properties>
+  <modules>
+  	<module>mwm-boot-demo</module>
+  	<module>mwm-module-swagger</module>
+  	<module>mwm-model-config</module>
+  	<module>mwm-module-config</module>
+  </modules>
+</project>
