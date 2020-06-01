@@ -29,9 +29,4 @@ proj:
   description: "@project.description@"
   version: "@project.version@"
 swagger:
-  enable: true
-#lit:
-#  szc:
-#    server: http://47.98.45.198:7950
-#testconfig:
-#  testSQLiteEfficiency: false
+  enable: false

@@ -86,22 +86,22 @@
   </Appenders>
   <Loggers>
   	<Logger name="org.springframework" level="info" additivity="false">
-  		<AppenderRef ref="SpringRollingFile"/>
+  		<AppenderRef ref="Console"/>
   	</Logger>
   	<Logger name="org.apache" level="info" additivity="false">
-  		<AppenderRef ref="ApacheRollingFile"/>
+  		<AppenderRef ref="Console"/>
   	</Logger>
   	<Logger name="com.alibaba.druid" level="info" additivity="false">
-        <AppenderRef ref="SpringRollingFile"/>
+        <AppenderRef ref="Console"/>
     </Logger>
   	<Logger name="com.yuansong.mwm" level="debug" additivity="false">
-  		<AppenderRef ref="MyRollingFile"/>
+  		<AppenderRef ref="Console"/>
   	</Logger>
   	<Logger name="com.yuansong.tools" level="debug" additivity="false">
-        <AppenderRef ref="MyRollingFile"/>
+        <AppenderRef ref="Console"/>        
     </Logger>
     <Root level="info">
-      <AppenderRef ref="OtherRollingFile"/>
+      <AppenderRef ref="Console"/>
     </Root>
   </Loggers>
 </Configuration>
