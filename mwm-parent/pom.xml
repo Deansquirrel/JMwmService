@@ -20,5 +20,6 @@
   	<module>mwm-module-swagger</module>
   	<module>mwm-model-config</module>
   	<module>mwm-module-config</module>
+  	<module>mwm-boot-mwm</module>
   </modules>
 </project>

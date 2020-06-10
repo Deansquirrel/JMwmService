@@ -31,6 +31,8 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @EnableSwagger2
 public class SwaggerBean {
 	
+	private static final String basePackage = "com.yuansong";
+	
 	private static final String defaultTitel = "API";
 	private static final String defaultDescription = "";
 	private static final String defaultVersion = "";
@@ -45,7 +47,7 @@ public class SwaggerBean {
 				this.swaggerConfig.isEnable() == null ? false : this.swaggerConfig.isEnable())
 			.apiInfo(this.apiInfo())
 			.select()
-			.apis(RequestHandlerSelectors.basePackage("com.yuansong"))
+			.apis(RequestHandlerSelectors.basePackage(basePackage))
 			.paths(PathSelectors.any())
 			.build();
 	}
